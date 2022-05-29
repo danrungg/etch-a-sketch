@@ -1,0 +1,10 @@
+.box {
+    outline: 1px red solid;
+    height: 30px;
+    width: 30px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 30px);
+}
