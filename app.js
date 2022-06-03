@@ -4,10 +4,9 @@ const output = document.getElementById("output");
 
 function changeSlider() {
     slider.addEventListener(
-        "input",
+        "change",
         function () {
             container.innerHTML = "";
-            console.log(slider.value);
             changeSize(slider.value);
             drawing();
         },
@@ -17,9 +16,13 @@ function changeSlider() {
 changeSlider();
 
 // create 256 divs and format with css
-function generateGrid(numberOfSquares = 16) {
+function generateGrid(numberOfSquares) {
     for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
-        container.innerHTML += `<div class="box box-${i}"></div>`;
+        // console.log(i);
+        // container.innerHTML += `<div class="box box-${i}"></div>`;
+        var newDiv = document.createElement("div");
+        newDiv.classList.add("box");
+        container.appendChild(newDiv);
     }
 }
 
@@ -30,23 +33,16 @@ function changeSize(numberOfSquares) {
     generateGrid(numberOfSquares);
 }
 
-// input number
-// changeSize(16);
-
-////////////////////////////////////////////////////////////////
-// draw color, only black
+// draw color, only black at the moment
 function drawColor(box) {
     box.style.backgroundColor = "black"; // #333333
 }
 
 // click and hold to change color
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/mousemove_event
-
 function drawing() {
     const boxes = document.querySelectorAll(".box");
-
     let isDrawing = false;
-
     boxes.forEach((box) => {
         box.addEventListener("mousedown", (e) => {
             isDrawing = true;
