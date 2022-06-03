@@ -1,10 +1,14 @@
 .box {
     outline: 1px red solid;
-    height: 30px;
-    width: 30px;
+    cursor: crosshair;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(16, 30px);
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    width: 500px;
+    height: 500px;
+
+    background-color: blue;
 }
