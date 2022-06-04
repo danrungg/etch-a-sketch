@@ -104,3 +104,8 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.highlight {
+    background-color: #333333;
+    color: rgb(239, 239, 239);
+}

@@ -23,6 +23,14 @@ function changeSlider() {
 }
 changeSlider();
 
+// show slider output
+function displaySliderOutput() {
+    slider.addEventListener("input", function () {
+        output.innerText = `${slider.value}x${slider.value}`;
+    });
+}
+displaySliderOutput();
+
 // create 256 divs and format with css
 function generateGrid(numberOfSquares) {
     for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
@@ -78,21 +86,40 @@ let mode = "DRAWING";
 drawing();
 
 // BUTTON SWITCHER
-
 eraserButton.addEventListener("click", function () {
     mode = "ERASING";
     erasing();
+    addHighlight(mode);
 });
 
 rainbowButton.addEventListener("click", function () {
     mode = "RAINBOWMODE";
     rainbowMode();
+    addHighlight(mode);
 });
 
 drawButton.addEventListener("click", function () {
     mode = "DRAWING";
     drawing();
+    addHighlight(mode);
 });
+
+// add accent color
+function addHighlight(mode) {
+    if (mode === "ERASING") {
+        eraserButton.classList.add("highlight");
+        drawButton.classList.remove("highlight");
+        rainbowButton.classList.remove("highlight");
+    } else if (mode === "RAINBOWMODE") {
+        rainbowButton.classList.add("highlight");
+        drawButton.classList.remove("highlight");
+        eraserButton.classList.remove("highlight");
+    } else if (mode === "DRAWING") {
+        drawButton.classList.add("highlight");
+        rainbowButton.classList.remove("highlight");
+        eraserButton.classList.remove("highlight");
+    }
+}
 
 ///////////////////////////////////////////////////////////////////
 
