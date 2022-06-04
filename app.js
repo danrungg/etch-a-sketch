@@ -1,6 +1,9 @@
+const DEFAULT_COLOR = "#333333";
+
 const container = document.querySelector(".grid-container");
 const slider = document.getElementById("sizeSlider");
 const output = document.getElementById("output");
+const colorPicker = document.querySelector(".color-picker");
 
 function changeSlider() {
     slider.addEventListener(
@@ -19,9 +22,8 @@ changeSlider();
 function generateGrid(numberOfSquares) {
     for (let i = 0; i < numberOfSquares * numberOfSquares; i++) {
         // console.log(i);
-        // container.innerHTML += `<div class="box box-${i}"></div>`;
         var newDiv = document.createElement("div");
-        newDiv.classList.add("box");
+        newDiv.classList.add("box", `box-${i}`);
         container.appendChild(newDiv);
     }
 }
@@ -33,9 +35,18 @@ function changeSize(numberOfSquares) {
     generateGrid(numberOfSquares);
 }
 
+let currentColor = DEFAULT_COLOR;
+
+// change color
+function changeColor() {
+    currentColor = colorPicker.value;
+}
+
+colorPicker.addEventListener("input", changeColor); // change
+
 // draw color, only black at the moment
 function drawColor(box) {
-    box.style.backgroundColor = "black"; // #333333
+    box.style.backgroundColor = currentColor; // #333333
 }
 
 // click and hold to change color
