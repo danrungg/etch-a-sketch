@@ -1,4 +1,5 @@
 const DEFAULT_COLOR = "#333333";
+const DEFAULT_NUMBER_OF_SQUARES = 16;
 
 const container = document.querySelector(".grid-container");
 const slider = document.getElementById("sizeSlider");
@@ -27,6 +28,13 @@ function generateGrid(numberOfSquares) {
         container.appendChild(newDiv);
     }
 }
+
+function defaultGrid() {
+    generateGrid(DEFAULT_NUMBER_OF_SQUARES);
+    drawing();
+}
+
+defaultGrid();
 
 // change grid to number
 function changeSize(numberOfSquares) {
