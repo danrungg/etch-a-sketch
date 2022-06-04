@@ -97,7 +97,6 @@ body {
 
 .footer {
     height: 72px;
-    border-top: 4px #333333 dashed;
     display: flex;
     justify-content: center;
     align-items: center;
