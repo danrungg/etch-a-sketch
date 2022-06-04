@@ -10,6 +10,7 @@ const drawButton = document.querySelector(".drawer");
 const rainbowButton = document.querySelector(".rainbow");
 const clearButton = document.querySelector(".clear");
 
+// change slider to clear and update grid squares
 function changeSlider() {
     slider.addEventListener(
         "change",
@@ -42,12 +43,11 @@ function generateGrid(numberOfSquares) {
 
 function defaultGrid() {
     generateGrid(DEFAULT_NUMBER_OF_SQUARES);
-    // drawing();
 }
 
 defaultGrid();
 
-// change grid to number
+// build up grid after changing
 function changeSize(numberOfSquares) {
     container.style.gridTemplateColumns = `repeat(${numberOfSquares}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${numberOfSquares}, 1fr)`;
