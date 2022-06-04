@@ -1,6 +1,85 @@
-.box {
-    outline: 1px red solid;
-    cursor: crosshair;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600;800&display=swap");
+
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: rgb(239, 239, 239);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.header {
+    padding: 30px 0;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 72px;
+    margin: 0;
+    color: #333333;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    /* border: 3px red solid; */
+    justify-content: center;
+}
+
+.test {
+    border: 4px #333333 dashed;
+    padding: 50px;
+    display: flex;
+    gap: 60px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid blue; */
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.color-picker {
+    height: 140px;
+    width: 140px;
+    border: none;
+    transition: transform 0.2s;
+    /* fixes bug */
+    resize: none;
+    outline: none;
+    background-color: transparent;
+}
+.color-picker:hover {
+    transform: scale(1.04);
+}
+
+.button {
+    width: 200px;
+    padding: 5px 8px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    border: 3px #333333 dotted;
+    border-radius: 3px;
+    transition: transform 0.2s;
+}
+.button:hover {
+    transform: scale(1.04);
 }
 
 .grid-container {
@@ -9,4 +88,19 @@
     grid-template-rows: repeat(16, 1fr);
     width: 500px;
     height: 500px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.box {
+    cursor: crosshair;
+}
+
+.footer {
+    height: 72px;
+    border-top: 4px #333333 dashed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

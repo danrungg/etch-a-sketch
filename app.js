@@ -8,6 +8,7 @@ const colorPicker = document.querySelector(".color-picker");
 const eraserButton = document.querySelector(".eraser");
 const drawButton = document.querySelector(".drawer");
 const rainbowButton = document.querySelector(".rainbow");
+const clearButton = document.querySelector(".clear");
 
 function changeSlider() {
     slider.addEventListener(
@@ -174,3 +175,12 @@ function rainbowMode() {
         });
     }
 }
+
+// clear all boxes
+function clear() {
+    const boxes = document.querySelectorAll(".box");
+    boxes.forEach((box) => {
+        box.style.backgroundColor = "";
+    });
+}
+clearButton.addEventListener("click", clear);
