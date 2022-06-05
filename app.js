@@ -9,6 +9,7 @@ const eraserButton = document.querySelector(".eraser");
 const drawButton = document.querySelector(".drawer");
 const rainbowButton = document.querySelector(".rainbow");
 const clearButton = document.querySelector(".clear");
+const title = document.querySelector(".title");
 
 // change slider to clear and update grid squares
 function changeSlider() {
@@ -59,13 +60,15 @@ let currentColor = DEFAULT_COLOR;
 // change color
 function changeColor() {
     currentColor = colorPicker.value;
+    console.log(colorPicker.value);
+    title.style.color = `${colorPicker.value}`;
 }
 
 colorPicker.addEventListener("input", changeColor); // change
 
 // draw color
 function drawColor(box) {
-    box.style.backgroundColor = currentColor; // #333333
+    box.style.backgroundColor = currentColor;
 }
 
 // erase color
